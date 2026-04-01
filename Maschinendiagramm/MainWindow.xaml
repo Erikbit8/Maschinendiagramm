@@ -1,0 +1,78 @@
+﻿<Window x:Class="MaschinenDiagramm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MaschinenDiagramm" Height="600" Width="1100">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- LINKE SEITE -->
+        <Border Grid.Column="0" Background="#F0F0F0" Padding="10">
+            <StackPanel>
+
+                <TextBlock Text="Steuerung"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Margin="0,0,0,20"/>
+
+                <TextBlock Text="Maschine wählen:"/>
+                <ComboBox x:Name="cmbMaschinen" Margin="0,5,0,15" />
+
+                <TextBlock Text="Jahr wählen:"/>
+                <ComboBox x:Name="cmbJahre" Margin="0,5,0,15" />
+
+                <Button Content="Daten laden"
+                        Click="btnLaden_Click"
+                        Height="35"
+                        Margin="0,0,0,10"/>
+
+                <Button Content="Produktivstes Jahr"
+                        Click="btnBestesJahr_Click"
+                        Height="35"/>
+
+                <TextBlock Text="Ergebnis:" Margin="0,20,0,5"/>
+                <TextBlock x:Name="txtErgebnis" Width="196" Height="35"/>
+
+            </StackPanel>
+        </Border>
+
+        <!-- RECHTE SEITE -->
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <!-- HEADER -->
+            <TextBlock Text="Produktionsübersicht"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"/>
+
+            <!-- DIAGRAMM -->
+            <Border Grid.Row="1" Background="White" BorderBrush="Gray" BorderThickness="1">
+                <Canvas x:Name="chartCanvas"/>
+            </Border>
+
+            <!-- MONATE -->
+            <UniformGrid Grid.Row="2" Columns="12">
+                <TextBlock Text="Jan" HorizontalAlignment="Center"/>
+                <TextBlock Text="Feb" HorizontalAlignment="Center"/>
+                <TextBlock Text="Mrz" HorizontalAlignment="Center"/>
+                <TextBlock Text="Apr" HorizontalAlignment="Center"/>
+                <TextBlock Text="Mai" HorizontalAlignment="Center"/>
+                <TextBlock Text="Jun" HorizontalAlignment="Center"/>
+                <TextBlock Text="Jul" HorizontalAlignment="Center"/>
+                <TextBlock Text="Aug" HorizontalAlignment="Center"/>
+                <TextBlock Text="Sep" HorizontalAlignment="Center"/>
+                <TextBlock Text="Okt" HorizontalAlignment="Center"/>
+                <TextBlock Text="Nov" HorizontalAlignment="Center"/>
+                <TextBlock Text="Dez" HorizontalAlignment="Center"/>
+            </UniformGrid>
+        </Grid>
+    </Grid>
+</Window>
