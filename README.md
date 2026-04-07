@@ -15,7 +15,7 @@ Die Daten werden aus einer MySQL-Datenbank geladen und anschließend grafisch da
 
 ---
 
-## ⚙️ Technologien
+##  Technologien
 
 * C# (.NET, WPF)
 * MySQL
@@ -39,7 +39,7 @@ SQL-Dateien auswählen und ausführen
 
 ---
 
-## 🔌 Verbindung zur Datenbank
+##  Verbindung zur Datenbank
 
 Die Verbindung wird im Code hergestellt:
 
@@ -64,6 +64,7 @@ string connectionString = "Server=localhost;Database=produktiondb;Uid=root;Pwd=D
    ```
 3. Datenbank einrichten (siehe oben)
 4. Projekt starten (F5)
-
+---
+Die aktuelle Struktur speichert die Monatswerte in einzelnen Spalten. Das ist unflexibel und erschwert spätere Erweiterungen sowie Auswertungen. Eine normalisierte Struktur würde die Datenbank wartbarer und effizienter machen.
 
 
